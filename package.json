@@ -1,0 +1,24 @@
+{
+  "name": "sven-taburet-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "npm run build && next export"
+  },
+  "author": "markomihelj@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^10.0.8",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.8",
+    "@babel/preset-react": "^7.12.13",
+    "frontmatter-markdown-loader": "^3.6.2"
+  }
+}
