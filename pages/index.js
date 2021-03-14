@@ -1,30 +1,30 @@
 import Head from "next/head";
 import { Component } from "react";
 
-import { attributes, react as HomeContent } from "../content/home.md";
+import { attributes } from "../content/home/jumbotron.md";
 
-export default class Home extends Component {
-  render() {
-    const { title, cats } = attributes;
+const Home = () => {
+  return (
+    <>
+      <Head>
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+      </Head>
+      <section
+        style={{
+          backgroundImage: `url('${attributes.bg_image}')`,
+          backgroundSize: "cover",
+          backgroundPosition: "0 -100px",
+          height: "560px",
+          color: "#222",
+          padding: "40px 80px",
+        }}
+      >
+        <h1>{attributes.title}</h1>
+        <h3>{attributes.description}</h3>
+        <a href="#">{attributes.Button}</a>
+      </section>
+    </>
+  );
+};
 
-    return (
-      <>
-        <Head>
-          <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-        </Head>
-        <article>
-          <h1>{title}</h1>
-          <HomeContent />
-          <ul>
-            {cats.map((cat, k) => (
-              <li key={k}>
-                <h2>{cat.name}</h2>
-                <p>{cat.description}</p>
-              </li>
-            ))}
-          </ul>
-        </article>
-      </>
-    );
-  }
-}
+export default Home;
