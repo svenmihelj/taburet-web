@@ -27,7 +27,7 @@ collections:
               widget: "relation",
               collection: "furniture",
               search_fields: ["title"],
-              value_field: "title",
+              value_field: "slug",
               display_fields: ["title", "price"],
             }
   - label: "Furniture"
