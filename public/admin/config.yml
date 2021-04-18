@@ -21,6 +21,15 @@ collections:
         file: "content/home/favorites.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
+          - {
+              label: "Favorite Furniture",
+              name: "favorit_furniture",
+              widget: "relation",
+              collection: "furniture",
+              search_fields: ["title"],
+              value_field: "title",
+              display_fields: ["title", "price"],
+            }
   - label: "Furniture"
     name: "furniture"
     create: true
