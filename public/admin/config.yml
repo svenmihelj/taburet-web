@@ -23,7 +23,9 @@ collections:
           - { label: "Title", name: "title", widget: "string" }
   - label: "Furniture"
     name: "furniture"
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: slug
     folder: "content/furniture"
     fields:
       - { label: "Title", name: "title", widget: "string" }
