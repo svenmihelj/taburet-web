@@ -12,9 +12,12 @@
   "author": "markomihelj@gmail.com",
   "license": "ISC",
   "dependencies": {
+    "@svgr/webpack": "^5.5.0",
+    "@types/theme-ui": "^0.3.7",
     "next": "^10.0.8",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "theme-ui": "^0.7.0"
   },
   "devDependencies": {
     "@babel/core": "^7.13.8",
