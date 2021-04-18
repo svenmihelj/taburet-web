@@ -1,5 +1,5 @@
+import React from "react";
 import Head from "next/head";
-import { Component } from "react";
 
 import { attributes } from "../content/home/jumbotron.md";
 

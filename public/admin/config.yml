@@ -21,12 +21,19 @@ collections:
         file: "content/home/favorites.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - label: "Carousel"
-            name: "carousel"
-            widget: "list"
-            fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Description", name: "description", widget: "string" }
-              - { label: "Price", name: "price", widget: "number" }
-              - { label: "Url", name: "link", widget: "string" }
-              - { label: "Featured image", name: "image", widget: "image" }
+      - label: "Items"
+        name: "items"
+        file: "content/items.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }
+          - { label: "Price", name: "price", widget: "number" }
+          - { label: "Url", name: "link", widget: "string" }
+          - { label: "Images", name: "images", widget: "image" }
+          - { label: "Favorite", name: "is_favorite", widget: "boolean" }
+          - {
+              label: "Type",
+              name: "type",
+              widget: "select",
+              options: ["chair", "table"],
+            }
