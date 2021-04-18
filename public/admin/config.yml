@@ -31,9 +31,12 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Price", name: "price", widget: "number" }
-      - { label: "Url", name: "link", widget: "string" }
-      - { label: "Images", name: "images", widget: "image" }
-      - { label: "Favorite", name: "is_favorite", widget: "boolean" }
+      - {
+          label: "Images",
+          name: "images",
+          widget: "image",
+          allow_multiple: true,
+        }
       - {
           label: "Type",
           name: "type",
