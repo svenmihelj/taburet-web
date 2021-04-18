@@ -21,20 +21,20 @@ collections:
         file: "content/home/favorites.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-      - label: "Items"
-        name: "items"
-        slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-        folder: "content/items"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "string" }
-          - { label: "Price", name: "price", widget: "number" }
-          - { label: "Url", name: "link", widget: "string" }
-          - { label: "Images", name: "images", widget: "image" }
-          - { label: "Favorite", name: "is_favorite", widget: "boolean" }
-          - {
-              label: "Type",
-              name: "type",
-              widget: "select",
-              options: ["chair", "table"],
-            }
+    - label: "Furniture"
+      name: "furniture"
+      slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+      folder: "content/furniture"
+      fields:
+        - { label: "Title", name: "title", widget: "string" }
+        - { label: "Description", name: "description", widget: "string" }
+        - { label: "Price", name: "price", widget: "number" }
+        - { label: "Url", name: "link", widget: "string" }
+        - { label: "Images", name: "images", widget: "image" }
+        - { label: "Favorite", name: "is_favorite", widget: "boolean" }
+        - {
+            label: "Type",
+            name: "type",
+            widget: "select",
+            options: ["chair", "table"],
+          }
