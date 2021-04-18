@@ -23,7 +23,8 @@ collections:
           - { label: "Title", name: "title", widget: "string" }
       - label: "Items"
         name: "items"
-        file: "content/items.md"
+        slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+        folder: "content/items"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "string" }
