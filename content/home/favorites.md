@@ -1,4 +1,5 @@
 ---
 title: Our fave finds
-favorit_furniture: Stol Lorena
+favorit_furniture:
+  - stol-lorena-1
 ---
