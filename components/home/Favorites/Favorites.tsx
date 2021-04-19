@@ -38,73 +38,71 @@ export const Favorites: FC = () => {
   const slickRef = useRef<Slider>();
 
   return (
-    <Box as="section" sx={{ my: 4 }}>
-      <Container>
-        <Flex sx={{ justifyContent: "space-between" }}>
-          <Heading as="h2" my={2} variant="favorites.heading">
-            {attributes.title}
-          </Heading>
-          <Box>
-            <IconButton
-              aria-label="previus button"
-              sx={{
-                cursor: "pointer",
-                outline: "none",
-                display: "inline-block",
-              }}
-              onClick={() => slickRef?.current?.slickPrev()}
-            >
-              <Box as={LeftIcon} />
-            </IconButton>
-            <IconButton
-              aria-label="next button"
-              sx={{
-                cursor: "pointer",
-                outline: "none",
-                display: "inline-block",
-              }}
-              onClick={() => slickRef?.current?.slickNext()}
-            >
-              <RightIcon />
-            </IconButton>
-          </Box>
-        </Flex>
-
-        {favorites?.length ? (
-          <Slider
-            ref={slickRef}
-            {...{
-              className: "center",
-              centerMode: true,
-              infinite: true,
-              slidesToShow: 3,
-              slidesToScroll: 3,
-              speed: 500,
+    <Box as="section" sx={{ my: 4, ml: "48px" }}>
+      <Flex sx={{ justifyContent: "space-between", px: 6 }}>
+        <Heading as="h2" my={2} variant="favorites.heading">
+          {attributes.title}
+        </Heading>
+        <Box>
+          <IconButton
+            aria-label="previus button"
+            sx={{
+              cursor: "pointer",
+              outline: "none",
+              display: "inline-block",
             }}
+            onClick={() => slickRef?.current?.slickPrev()}
           >
-            {favorites.map((item) => (
-              <Box key={item.title} sx={{ width: "360px" }}>
-                <Image
-                  sx={{ height: "200px", mx: "auto" }}
-                  src={item.images[0]}
-                />
-                <Flex
-                  sx={{
-                    justifyContent: "space-between",
-                    width: "200px",
-                    mx: "auto",
-                  }}
-                >
-                  <Text as="p">{item.title}</Text>
-                  <Text as="p">{item.price}</Text>
-                </Flex>
-              </Box>
-            ))}
-          </Slider>
-        ) : (
-          <Box>Loading</Box>
-        )}
-      </Container>
+            <Box as={LeftIcon} />
+          </IconButton>
+          <IconButton
+            aria-label="next button"
+            sx={{
+              cursor: "pointer",
+              outline: "none",
+              display: "inline-block",
+            }}
+            onClick={() => slickRef?.current?.slickNext()}
+          >
+            <RightIcon />
+          </IconButton>
+        </Box>
+      </Flex>
+
+      {favorites?.length ? (
+        <Slider
+          ref={slickRef}
+          {...{
+            className: "center",
+            centerMode: true,
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            speed: 500,
+          }}
+        >
+          {favorites.map((item) => (
+            <Box key={item.title} sx={{ width: "360px" }}>
+              <Image
+                sx={{ height: "200px", mx: "auto" }}
+                src={item.images[0]}
+              />
+              <Flex
+                sx={{
+                  justifyContent: "space-between",
+                  width: "200px",
+                  mx: "auto",
+                }}
+              >
+                <Text as="p">{item.title}</Text>
+                <Text as="p">{item.price}</Text>
+              </Flex>
+            </Box>
+          ))}
+        </Slider>
+      ) : (
+        <Box>Loading</Box>
+      )}
     </Box>
   );
 };
