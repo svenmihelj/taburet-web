@@ -38,8 +38,8 @@ export const Favorites: FC = () => {
   const slickRef = useRef<Slider>();
 
   return (
-    <Box as="section" sx={{ my: 4, ml: "48px" }}>
-      <Flex sx={{ justifyContent: "space-between", px: 6 }}>
+    <Box as="section" sx={{ my: 4, ml: 5 }}>
+      <Flex sx={{ justifyContent: "space-between", pr: 6 }}>
         <Heading as="h2" my={2} variant="favorites.heading">
           {attributes.title}
         </Heading>

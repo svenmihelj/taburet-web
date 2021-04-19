@@ -7,7 +7,7 @@ export const Navbar: FC<BoxProps> = () => (
   <Flex
     sx={{
       py: 2,
-      px: 3,
+      px: 5,
       fontSize: 5,
       alignItems: "center",
       justifyContent: "space-between",
