@@ -13,7 +13,9 @@ export const Navbar: FC<BoxProps> = () => (
       justifyContent: "space-between",
     }}
   >
-    <Heading as="h3">Taburet</Heading>
+    <Heading as="h3" color="primary" sx={{ fontSize: 5 }}>
+      TABURET
+    </Heading>
     <Box
       as={LikeIcon}
       sx={{

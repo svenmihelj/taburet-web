@@ -13,8 +13,8 @@ collections:
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "string" }
-          - { label: "ButtonText", name: "Button", widget: "string" }
-          - { label: "Url", name: "link", widget: "string" }
+          - { label: "Link text", name: "link_text", widget: "string" }
+          - { label: "Link url", name: "link_url", widget: "string" }
           - { label: "Background image", name: "bg_image", widget: "image" }
       - label: "Favorites"
         name: "home-favorites"

@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Box, Heading, Text } from "theme-ui";
+import { Box, Heading, Text, Link, Container } from "theme-ui";
 
 import { attributes } from "../../../content/home/jumbotron.md";
 
@@ -21,13 +21,17 @@ export const Jumbotron: FC = () => (
         height: "100%",
         position: "absolute",
         bg: "primary",
-        opacity: "0.2",
+        opacity: "0.3",
       }}
     />
-    <Box sx={{ position: "absolute", px: 7, py: 1 }}>
-      <Heading as="h1">{attributes.title}</Heading>
-      <Text as="p">{attributes.description}</Text>
-      <a href="#">{attributes.Button}</a>
-    </Box>
+    <Container sx={{ position: "relative", py: 1 }}>
+      <Heading as="h1" variant="jumbotron.heading" my={2}>
+        {attributes.title}
+      </Heading>
+      <Text as="p" mb={1} variant="jumbotron.subheading">
+        {attributes.description}
+      </Text>
+      <Link href={attributes.link_url}>{attributes.link_text}</Link>
+    </Container>
   </Box>
 );

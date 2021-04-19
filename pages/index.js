@@ -4,6 +4,7 @@ import { Navbar } from "../components/shared/Navbar/Navbar.tsx";
 import { Meta } from "../components/shared/Meta/Meta.tsx";
 
 import { Jumbotron } from "../components/home/Jumbotron/Jumbotron.tsx";
+import { Favorites } from "../components/home/Favorites/Favorites.tsx";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <Meta />
       <Navbar />
       <Jumbotron />
+      <Favorites />
     </>
   );
 };
