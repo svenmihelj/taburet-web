@@ -1,17 +1,10 @@
-import React, { FC, useEffect, useRef, useState } from "react";
-import {
-  Box,
-  Text,
-  Container,
-  Flex,
-  Heading,
-  Image,
-  IconButton,
-} from "theme-ui";
-import Slider from "react-slick";
+import React, { FC, useEffect, useCallback, useState } from "react";
+import { Box, Flex, Heading, IconButton } from "theme-ui";
+import { useEmblaCarousel } from "embla-carousel/react";
+
+import { FavoriSliderItem } from "../FavoriSliderItem/FavoriSliderItem";
 
 import { attributes } from "../../../content/home/favorites.md";
-
 import LeftIcon from "../../../assets/icons/ic-left.svg";
 import RightIcon from "../../../assets/icons/ic-right.svg";
 
@@ -35,7 +28,18 @@ function useFavorites(favorites) {
 
 export const Favorites: FC = () => {
   const favorites = useFavorites(attributes.favorit_furniture);
-  const slickRef = useRef<Slider>();
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    align: "start",
+    loop: true,
+  });
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
 
   return (
     <Box as="section" sx={{ my: 4, ml: 5 }}>
@@ -50,8 +54,9 @@ export const Favorites: FC = () => {
               cursor: "pointer",
               outline: "none",
               display: "inline-block",
+              mr: 2,
             }}
-            onClick={() => slickRef?.current?.slickPrev()}
+            onClick={scrollPrev}
           >
             <Box as={LeftIcon} />
           </IconButton>
@@ -62,7 +67,7 @@ export const Favorites: FC = () => {
               outline: "none",
               display: "inline-block",
             }}
-            onClick={() => slickRef?.current?.slickNext()}
+            onClick={scrollNext}
           >
             <RightIcon />
           </IconButton>
@@ -70,36 +75,13 @@ export const Favorites: FC = () => {
       </Flex>
 
       {favorites?.length ? (
-        <Slider
-          ref={slickRef}
-          {...{
-            className: "center",
-            centerMode: true,
-            infinite: true,
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            speed: 500,
-          }}
-        >
-          {favorites.map((item) => (
-            <Box key={item.title} sx={{ width: "360px" }}>
-              <Image
-                sx={{ height: "200px", mx: "auto" }}
-                src={item.images[0]}
-              />
-              <Flex
-                sx={{
-                  justifyContent: "space-between",
-                  width: "200px",
-                  mx: "auto",
-                }}
-              >
-                <Text as="p">{item.title}</Text>
-                <Text as="p">{item.price}</Text>
-              </Flex>
-            </Box>
-          ))}
-        </Slider>
+        <Box sx={{ overflow: "hidden" }} ref={emblaRef}>
+          <Flex>
+            {favorites.map((item) => (
+              <FavoriSliderItem favoriteItem={item} key={item.title} />
+            ))}
+          </Flex>
+        </Box>
       ) : (
         <Box>Loading</Box>
       )}

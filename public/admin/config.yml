@@ -16,6 +16,15 @@ collections:
           - { label: "Link text", name: "link_text", widget: "string" }
           - { label: "Link url", name: "link_url", widget: "string" }
           - { label: "Background image", name: "bg_image", widget: "image" }
+      - label: "Advertisement"
+        name: "home-advertisement"
+        file: "content/home/advertisement.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }
+          - { label: "Link text", name: "link_text", widget: "string" }
+          - { label: "Link url", name: "link_url", widget: "string" }
+          - { label: "Background image", name: "bg_image", widget: "image" }
       - label: "Favorites"
         name: "home-favorites"
         file: "content/home/favorites.md"

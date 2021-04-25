@@ -24,7 +24,7 @@ export const Jumbotron: FC = () => (
         opacity: "0.3",
       }}
     />
-    <Container sx={{ position: "relative", py: 1 }}>
+    <Container sx={{ position: "relative", py: 1, mx: 5 }}>
       <Heading as="h1" variant="jumbotron.heading" my={2}>
         {attributes.title}
       </Heading>
