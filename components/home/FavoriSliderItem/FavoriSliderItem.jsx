@@ -1,7 +1,7 @@
-import React, { FC, useState } from "react";
+import React, { useState } from "react";
 import { Box, Flex, Image, Text, IconButton } from "theme-ui";
 
-export const FavoriSliderItem: FC<any> = ({ favoriteItem, ...rest }) => {
+export const FavoriSliderItem = ({ favoriteItem, ...rest }) => {
   const [overlay, setOverlay] = useState(false);
 
   return (

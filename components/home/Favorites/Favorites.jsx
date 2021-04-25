@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useCallback, useState } from "react";
+import React, { useEffect, useCallback, useState } from "react";
 import { Box, Flex, Heading, IconButton } from "theme-ui";
 import { useEmblaCarousel } from "embla-carousel/react";
 
@@ -26,7 +26,7 @@ function useFavorites(favorites) {
   return items;
 }
 
-export const Favorites: FC = () => {
+export const Favorites = () => {
   const favorites = useFavorites(attributes.favorit_furniture);
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "start",

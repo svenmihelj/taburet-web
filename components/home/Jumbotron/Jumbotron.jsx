@@ -1,9 +1,9 @@
-import React, { FC } from "react";
+import React from "react";
 import { Box, Heading, Text, Link, Container } from "theme-ui";
 
 import { attributes } from "../../../content/home/jumbotron.md";
 
-export const Jumbotron: FC = () => (
+export const Jumbotron = () => (
   <Box
     as="section"
     sx={{

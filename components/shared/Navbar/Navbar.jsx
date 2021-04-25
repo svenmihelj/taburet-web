@@ -1,9 +1,9 @@
-import React, { FC } from "react";
-import { Flex, Box, Heading, BoxProps } from "theme-ui";
+import React from "react";
+import { Flex, Box, Heading } from "theme-ui";
 
 import LikeIcon from "../../../assets/icons/ic-heart.svg";
 
-export const Navbar: FC<BoxProps> = () => (
+export const Navbar = () => (
   <Flex
     sx={{
       py: 2,
