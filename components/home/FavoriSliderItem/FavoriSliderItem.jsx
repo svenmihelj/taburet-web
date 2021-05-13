@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Box, Flex, Image, Text, IconButton } from "theme-ui";
+import { useRouter } from "next/router";
 
 export const FavoriSliderItem = ({ favoriteItem, ...rest }) => {
+  const router = useRouter();
   const [overlay, setOverlay] = useState(false);
 
   return (
@@ -19,7 +21,7 @@ export const FavoriSliderItem = ({ favoriteItem, ...rest }) => {
     >
       <Flex
         style={{
-          top: overlay ? "0px" : "-200px",
+          top: overlay ? "0px" : "-250px",
         }}
         sx={{
           backgroundColor: "rgba(34, 34, 34, 0.4)",
@@ -32,6 +34,7 @@ export const FavoriSliderItem = ({ favoriteItem, ...rest }) => {
           justifyContent: "center",
           alignItems: "center",
         }}
+        onClick={() => router.push(favoriteItem.name)}
       >
         <Text as="p" sx={{ fontSize: 4 }}>
           {favoriteItem.title}
@@ -41,16 +44,6 @@ export const FavoriSliderItem = ({ favoriteItem, ...rest }) => {
         sx={{ mx: "auto", height: "100%", display: "block" }}
         src={favoriteItem.images[0]}
       />
-      {/* <Flex
-        sx={{
-          justifyContent: "space-between",
-          width: "200px",
-          mx: "auto",
-        }}
-      >
-        <Text as="p">{favoriteItem.title}</Text>
-        <Text as="p">{favoriteItem.price}</Text>
-      </Flex> */}
     </Box>
   );
 };

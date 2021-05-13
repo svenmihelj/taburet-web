@@ -31,7 +31,9 @@ export const Jumbotron = () => (
       <Text as="p" mb={1} variant="jumbotron.subheading">
         {attributes.description}
       </Text>
-      <Link href={attributes.link_url}>{attributes.link_text}</Link>
+      <Link sx={{ fontSize: 4, color: "secondary" }} href={attributes.link_url}>
+        {attributes.link_text}
+      </Link>
     </Container>
   </Box>
 );

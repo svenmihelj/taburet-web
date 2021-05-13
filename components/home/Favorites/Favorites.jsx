@@ -14,9 +14,10 @@ function useFavorites(favorites) {
   useEffect(() => {
     Promise.all(
       favorites.map((item) =>
-        import(`../../../content/furniture/${item}.md`).then(
-          (data) => data.attributes
-        )
+        import(`../../../content/furniture/${item}.md`).then((data) => ({
+          ...data.attributes,
+          name: item,
+        }))
       )
     ).then((data) => {
       setItems(data);

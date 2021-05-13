@@ -11,7 +11,7 @@ export const theme = {
     body: '"Nunito", sans-serif',
     heading: '"Nunito", sans-serif',
   },
-  space: [8, 16, 24, 32, 40, 48, 56, 64],
+  space: [8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96],
   fontSize: [12, 14, 16, 20, 24, 32, 48, 64],
   text: {
     jumbotron: {
@@ -50,8 +50,15 @@ export const theme = {
       fontWeight: 300,
     },
     a: {
-      color: "secondary",
+      color: "primary",
       fontSize: 4,
+    },
+    hr: {
+      margin: "0px",
+      color: "transparent",
+      borderBottomWidth: "1px",
+      borderBottomStyle: "solid",
+      borderBottomColor: "primary",
     },
   },
 };
