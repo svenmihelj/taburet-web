@@ -6,40 +6,13 @@ public_folder: images
 collections:
   - label: "Home"
     name: "home"
-    files:
-      - label: "Jumbotron"
-        name: "home-jumbotron"
-        file: "content/home/jumbotron.md"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "string" }
-          - { label: "Link text", name: "link_text", widget: "string" }
-          - { label: "Link url", name: "link_url", widget: "string" }
-          - { label: "Background image", name: "bg_image", widget: "image" }
-      - label: "Advertisement"
-        name: "home-advertisement"
-        file: "content/home/advertisement.md"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "string" }
-          - { label: "Link text", name: "link_text", widget: "string" }
-          - { label: "Link url", name: "link_url", widget: "string" }
-          - { label: "Background image", name: "bg_image", widget: "image" }
-      - label: "Favorites"
-        name: "home-favorites"
-        file: "content/home/favorites.md"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - {
-              label: "Favorite Furniture",
-              name: "favorit_furniture",
-              widget: "relation",
-              collection: "furniture",
-              multiple: true,
-              search_fields: ["title"],
-              value_field: "{{slug}}",
-              display_fields: ["title"],
-            }
+    file: "content/home.md"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Link text", name: "link_text", widget: "string" }
+      - { label: "Link url", name: "link_url", widget: "string" }
+      - { label: "Background image", name: "bg_image", widget: "image" }
   - label: "Furniture"
     name: "furniture"
     create: true
@@ -63,3 +36,14 @@ collections:
           widget: "select",
           options: ["chair", "table"],
         }
+      - {
+          label: "Type of mechanism",
+          name: "mechanism",
+          widget: "select",
+          options: ["mechanically", "semi-mechanical", "automatic"],
+          required: false,
+        }
+      - { label: "Width", name: "width", widget: "string" }
+      - { label: "Height", name: "height", widget: "string" }
+      - { label: "Lenght", name: "lenght", widget: "string" }
+      - { label: "Material", name: "material", widget: "string" }

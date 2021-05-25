@@ -5,9 +5,6 @@ import { Footer } from "../components/shared/Footer/Footer";
 import { Meta } from "../components/shared/Meta/Meta";
 
 import { Jumbotron } from "../components/home/Jumbotron/Jumbotron";
-import { Favorites } from "../components/home/Favorites/Favorites";
-import { Advertisement } from "../components/home/Advertisement/Advertisement";
-import { RoomType } from "../components/home/RoomType/RoomType";
 
 const Home = () => {
   return (
@@ -15,9 +12,6 @@ const Home = () => {
       <Meta />
       <Navbar />
       <Jumbotron />
-      <Favorites />
-      <Advertisement />
-      <RoomType />
       <Footer />
     </>
   );

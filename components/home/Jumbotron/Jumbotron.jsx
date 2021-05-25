@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Heading, Text, Link, Container } from "theme-ui";
 
-import { attributes } from "../../../content/home/jumbotron.md";
+import { attributes } from "../../../content/home.md";
 
 export const Jumbotron = () => (
   <Box

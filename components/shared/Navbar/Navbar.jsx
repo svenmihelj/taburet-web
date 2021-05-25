@@ -1,7 +1,7 @@
 import React from "react";
 import { Flex, Box, Heading } from "theme-ui";
 
-import LikeIcon from "../../../assets/icons/ic-heart.svg";
+import CartIcon from "../../../assets/icons/ic-cart.svg";
 
 export const Navbar = () => (
   <Flex
@@ -17,7 +17,7 @@ export const Navbar = () => (
       TABURET
     </Heading>
     <Box
-      as={LikeIcon}
+      as={CartIcon}
       sx={{
         ":hover": {
           cursor: "pointer",
