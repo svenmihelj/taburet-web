@@ -7,4 +7,9 @@ images:
   - images/stol-klark.png
   - images/stol-klark-2.png
 type: table
+mechanism: mechanically
+width: "100"
+height: "100"
+lenght: "100"
+material: wood
 ---
