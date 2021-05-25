@@ -14,7 +14,7 @@ https://www.made.com/
 - home page with jumbothron and list of all products
 - on home page add filtering by stolovi/stolice
 - footer contact form
-- language: hrv/eng/de/rus
+- language: hrv/eng/de/rus [hr, en, de, ru]
 - based on language we can add different items and item types
 - in navbar add "veleprodaja" button that will go to veleprodaja section on about page
 - add info page that will have RTE

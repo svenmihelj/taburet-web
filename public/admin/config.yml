@@ -4,46 +4,95 @@ backend:
 media_folder: public/images
 public_folder: images
 collections:
-  - label: "Home"
-    name: "home"
-    file: "content/home.md"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "string" }
-      - { label: "Link text", name: "link_text", widget: "string" }
-      - { label: "Link url", name: "link_url", widget: "string" }
-      - { label: "Background image", name: "bg_image", widget: "image" }
-  - label: "Furniture"
-    name: "furniture"
-    create: true
-    slug: "{{slug}}"
-    identifier_field: slug
-    folder: "content/furniture"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "string" }
-      - { label: "Price", name: "price", widget: "number" }
-      - {
-          label: "Images",
-          name: "images",
-          widget: "list",
-          summary: "{{fields.image}}",
-          field: { label: Image, name: image, widget: image },
-        }
-      - {
-          label: "Type",
-          name: "type",
-          widget: "select",
-          options: ["chair", "table"],
-        }
-      - {
-          label: "Type of mechanism",
-          name: "mechanism",
-          widget: "select",
-          options: ["mechanically", "semi-mechanical", "automatic"],
-          required: false,
-        }
-      - { label: "Width", name: "width", widget: "string" }
-      - { label: "Height", name: "height", widget: "string" }
-      - { label: "Lenght", name: "lenght", widget: "string" }
-      - { label: "Material", name: "material", widget: "string" }
+  - label: "english"
+    name: "en"
+    files:
+      - label: "Home"
+        name: "home"
+        file: "content/en/home.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }
+          - { label: "Link text", name: "link_text", widget: "string" }
+          - { label: "Link url", name: "link_url", widget: "string" }
+          - { label: "Background image", name: "bg_image", widget: "image" }
+      - label: "Furniture"
+        name: "furniture"
+        create: true
+        slug: "{{slug}}"
+        identifier_field: slug
+        folder: "content/en/furniture"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }
+          - { label: "Price", name: "price", widget: "number" }
+          - {
+              label: "Images",
+              name: "images",
+              widget: "list",
+              summary: "{{fields.image}}",
+              field: { label: Image, name: image, widget: image },
+            }
+          - {
+              label: "Type",
+              name: "type",
+              widget: "select",
+              options: ["chair", "table"],
+            }
+          - {
+              label: "Type of mechanism",
+              name: "mechanism",
+              widget: "select",
+              options: ["mechanically", "semi-mechanical", "automatic"],
+              required: false,
+            }
+          - { label: "Width", name: "width", widget: "string" }
+          - { label: "Height", name: "height", widget: "string" }
+          - { label: "Lenght", name: "lenght", widget: "string" }
+          - { label: "Material", name: "material", widget: "string" }
+  - label: "german"
+    name: "de"
+    files:
+      - label: "Home"
+        name: "home"
+        file: "content/de/home.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }
+          - { label: "Link text", name: "link_text", widget: "string" }
+          - { label: "Link url", name: "link_url", widget: "string" }
+          - { label: "Background image", name: "bg_image", widget: "image" }
+      - label: "Furniture"
+        name: "furniture"
+        create: true
+        slug: "{{slug}}"
+        identifier_field: slug
+        folder: "content/de/furniture"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }
+          - { label: "Price", name: "price", widget: "number" }
+          - {
+              label: "Images",
+              name: "images",
+              widget: "list",
+              summary: "{{fields.image}}",
+              field: { label: Image, name: image, widget: image },
+            }
+          - {
+              label: "Type",
+              name: "type",
+              widget: "select",
+              options: ["chair", "table"],
+            }
+          - {
+              label: "Type of mechanism",
+              name: "mechanism",
+              widget: "select",
+              options: ["mechanically", "semi-mechanical", "automatic"],
+              required: false,
+            }
+          - { label: "Width", name: "width", widget: "string" }
+          - { label: "Height", name: "height", widget: "string" }
+          - { label: "Lenght", name: "lenght", widget: "string" }
+          - { label: "Material", name: "material", widget: "string" }
