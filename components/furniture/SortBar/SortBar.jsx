@@ -3,17 +3,17 @@ import {
   Flex,
   Button,
   useDisclosure,
-  Drawer,
-  DrawerBody,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
+  // Drawer,
+  // DrawerBody,
+  // DrawerFooter,
+  // DrawerHeader,
+  // DrawerOverlay,
+  // DrawerContent,
+  // DrawerCloseButton,
 } from "@chakra-ui/react";
 
 import { SortSelect } from "./SortBar.elements";
-import { FilterForm } from "./FilterForm";
+import { FilterDrawerForm } from "../FilterDrawerForm/FilterDrawerForm";
 
 import FilterIcon from "../../../assets/icons/ic-filter.svg";
 
@@ -44,7 +44,13 @@ export const SortBar = ({ onSortChange, ...rest }) => {
         <option value="price-desc">Price: low to high</option>
         <option value="price-asc">Price: high to low</option>
       </SortSelect>
-      <Drawer
+      <FilterDrawerForm
+        isOpen={isOpen}
+        placement="right"
+        onClose={onClose}
+        finalFocusRef={btnRef}
+      />
+      {/* <Drawer
         isOpen={isOpen}
         placement="right"
         onClose={onClose}
@@ -66,7 +72,7 @@ export const SortBar = ({ onSortChange, ...rest }) => {
             <Button colorScheme="blue">View</Button>
           </DrawerFooter>
         </DrawerContent>
-      </Drawer>
+      </Drawer> */}
     </Flex>
   );
 };
