@@ -78,6 +78,7 @@ export const Navbar = () => {
                 bg="white"
                 display={mobileNav.isOpen ? "flex" : "none"}
                 flexDirection="column"
+                zIndex={2}
                 p={2}
                 pb={4}
                 spacing={3}
