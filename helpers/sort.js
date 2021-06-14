@@ -41,3 +41,14 @@ export const priceCompareDesc = (a, b) => {
 
   return 0;
 };
+
+export const dateCompareDesc = (a, b) => {
+  if (a.date < b.date) {
+    return -1;
+  }
+  if (a.date > b.date) {
+    return 1;
+  }
+
+  return 0;
+};

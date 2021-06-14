@@ -16,7 +16,9 @@ export const ContentProvider = ({ children }) => {
   );
 
   useEffect(() => {
-    importContent().then((data) => setContent(data));
+    importContent().then((data) => {
+      setContent(data);
+    });
   }, []);
 
   const getFurnitureById = (id) => {

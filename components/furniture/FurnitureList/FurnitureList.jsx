@@ -8,6 +8,7 @@ import {
   nameCompateAsc,
   priceCompareAsc,
   priceCompareDesc,
+  dateCompareDesc,
 } from "../../../helpers/sort";
 
 export const FurnitureList = ({ furnitures }) => {
@@ -18,16 +19,16 @@ export const FurnitureList = ({ furnitures }) => {
       return null;
     }
 
-    console.log(furnitures);
-
     if (sort === "name-asc") {
-      return furnitures.sort(nameCompateAsc);
+      return [...furnitures].sort(nameCompateAsc);
     } else if (sort === "name-desc") {
-      return furnitures.sort(nameCompateDesc);
+      return [...furnitures].sort(nameCompateDesc);
     } else if (sort === "price-asc") {
-      return furnitures.sort(priceCompareAsc);
+      return [...furnitures].sort(priceCompareAsc);
     } else if (sort === "price-desc") {
-      return furnitures.sort(priceCompareDesc);
+      return [...furnitures].sort(priceCompareDesc);
+    } else if (sort === "date") {
+      return [...furnitures].sort(dateCompareDesc);
     }
 
     return furnitures;
@@ -39,7 +40,7 @@ export const FurnitureList = ({ furnitures }) => {
 
   return (
     <>
-      <SortBar onSortChange={setSort} />
+      <SortBar onSortChange={setSort} px={8} />
       <Flex as="section" wrap="wrap" justify="flex-start" px={4}>
         {furnitureList.map((item) => (
           <FurnitureItem key={item.id} furniture={item} />
