@@ -54,6 +54,12 @@ collections:
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Price", name: "price", widget: "number" }
       - {
+          label: "Publish Date",
+          name: "date",
+          widget: "datetime",
+          required: true,
+        }
+      - {
           label: "Images",
           name: "images",
           widget: "list",
@@ -87,6 +93,12 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Price", name: "price", widget: "number" }
+      - {
+          label: "Publish Date",
+          name: "date",
+          widget: "datetime",
+          required: true,
+        }
       - {
           label: "Images",
           name: "images",
@@ -122,6 +134,12 @@ collections:
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Price", name: "price", widget: "number" }
       - {
+          label: "Publish Date",
+          name: "date",
+          widget: "datetime",
+          required: true,
+        }
+      - {
           label: "Images",
           name: "images",
           widget: "list",
@@ -155,6 +173,12 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Price", name: "price", widget: "number" }
+      - {
+          label: "Publish Date",
+          name: "date",
+          widget: "datetime",
+          required: true,
+        }
       - {
           label: "Images",
           name: "images",
