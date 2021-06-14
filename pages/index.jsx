@@ -1,7 +1,9 @@
 import React from "react";
 import NextLink from "next/link";
-import { Heading, Link } from "@chakra-ui/react";
+import { Link } from "@chakra-ui/react";
 
+import { Jumbotron } from "../components/home/Jumbotron/Jumbotron";
+import { FurnitureList } from "../components/furniture/FurnitureList/FurnitureList";
 import { Navbar } from "../components/shared/Navbar/Navbar";
 import { Footer } from "../components/shared/Footer/Footer";
 import { Meta } from "../components/shared/Meta/Meta";
@@ -10,20 +12,14 @@ import { useContent } from "../context/ContentProvider";
 
 const Home = () => {
   const { content } = useContent();
+  console.log(content);
 
   return (
     <>
       <Meta />
       <Navbar />
-      <Heading>{content?.home?.title}</Heading>
-      {content?.furniture?.map((item) => (
-        <NextLink href={item.id} key={item.id}>
-          <Link>
-            {item.title} <br />
-          </Link>
-        </NextLink>
-      ))}
-      <Footer />
+      <Jumbotron content={content.home} />
+      <FurnitureList furnitures={content.furniture} />
     </>
   );
 };

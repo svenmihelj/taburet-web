@@ -94,7 +94,6 @@ export const Navbar = () => {
                 </Button>
                 <LanguagePicker
                   value={language}
-                  isFullWidth
                   onChange={(e) => {
                     changeLanguage(e.target.value);
                     mobileNav.onClose();
