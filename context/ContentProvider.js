@@ -5,7 +5,9 @@ import { importContent } from "../helpers/importContent";
 const ContentProviderContext = createContext({});
 
 export const ContentProvider = ({ children }) => {
-  const [language, setLanguage] = useState("en");
+  const [language, setLanguage] = useState(
+    (process.browser && localStorage.getItem("language")) || "en"
+  );
   const [content, setContent] = useState({});
 
   const contentByLanguage = useMemo(
@@ -29,12 +31,17 @@ export const ContentProvider = ({ children }) => {
     return furniture;
   };
 
+  const handleLanguageChange = (lng) => {
+    setLanguage(lng);
+    localStorage.setItem("language", lng);
+  };
+
   return (
     <ContentProviderContext.Provider
       value={{
         content: contentByLanguage,
         language,
-        changeLanguage: setLanguage,
+        changeLanguage: handleLanguageChange,
         getFurnitureById,
       }}
     >
