@@ -12,7 +12,6 @@ import { useContent } from "../context/ContentProvider";
 
 const Home = () => {
   const { content } = useContent();
-  console.log(content);
 
   return (
     <>
