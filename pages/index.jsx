@@ -18,7 +18,7 @@ const Home = () => {
       <Meta />
       <Navbar />
       <Jumbotron content={content.home} />
-      <FurnitureList furnitures={content.furniture} />
+      <FurnitureList furniture={content.furniture} />
     </>
   );
 };

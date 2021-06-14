@@ -10,29 +10,33 @@ import {
   priceCompareDesc,
   dateCompareDesc,
 } from "../../../helpers/sort";
+import { filterFurniture } from "../../../helpers/filter";
 
-export const FurnitureList = ({ furnitures }) => {
+export const FurnitureList = ({ furniture }) => {
   const [sort, setSort] = useState();
+  const [filter, setFilter] = useState();
 
   const furnitureList = useMemo(() => {
-    if (!furnitures?.length) {
+    if (!furniture?.length) {
       return null;
     }
 
+    const filteredFurniture = filterFurniture(furniture, filter);
+
     if (sort === "name-asc") {
-      return [...furnitures].sort(nameCompateAsc);
+      return filteredFurniture.sort(nameCompateAsc);
     } else if (sort === "name-desc") {
-      return [...furnitures].sort(nameCompateDesc);
+      return filteredFurniture.sort(nameCompateDesc);
     } else if (sort === "price-asc") {
-      return [...furnitures].sort(priceCompareAsc);
+      return filteredFurniture.sort(priceCompareAsc);
     } else if (sort === "price-desc") {
-      return [...furnitures].sort(priceCompareDesc);
+      return filteredFurniture.sort(priceCompareDesc);
     } else if (sort === "date") {
-      return [...furnitures].sort(dateCompareDesc);
+      return filteredFurniture.sort(dateCompareDesc);
     }
 
-    return furnitures;
-  }, [furnitures, sort]);
+    return filteredFurniture;
+  }, [furniture, sort, filter]);
 
   if (!furnitureList) {
     return <Box>empty list</Box>;
@@ -40,7 +44,12 @@ export const FurnitureList = ({ furnitures }) => {
 
   return (
     <>
-      <SortBar onSortChange={setSort} px={8} />
+      <SortBar
+        onSortChange={setSort}
+        handleSubmit={setFilter}
+        filter={filter}
+        px={8}
+      />
       <Flex as="section" wrap="wrap" justify="flex-start" px={4}>
         {furnitureList.map((item) => (
           <FurnitureItem key={item.id} furniture={item} />

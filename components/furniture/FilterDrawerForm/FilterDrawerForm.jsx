@@ -22,17 +22,24 @@ import {
 
 import { useContent } from "../../../context/ContentProvider";
 
-export const FilterDrawerForm = (props) => {
+export const FilterDrawerForm = ({ handleSubmit, ...rest }) => {
   const {
     content: { filterOptions },
   } = useContent();
   const [typeValue, setTypeValue] = useState([]);
-  const [priceValue, setPriceValue] = useState(filterOptions.price.min);
+  const [priceValue, setPriceValue] = useState(filterOptions.price.max);
   const [mechanismValue, setMechanismValue] = useState([]);
   const [materialValue, setMaterialValue] = useState([]);
 
+  const resetFilterState = () => {
+    setTypeValue([]);
+    setPriceValue(filterOptions.price.max);
+    setMechanismValue([]);
+    setMaterialValue([]);
+  };
+
   return (
-    <Drawer {...props}>
+    <Drawer {...rest}>
       <DrawerOverlay />
       <DrawerContent>
         <DrawerCloseButton />
@@ -55,8 +62,8 @@ export const FilterDrawerForm = (props) => {
             Price
           </Heading>
           <Flex justify="space-between">
-            <Text>Min: {priceValue}€</Text>
-            <Text>Max: {filterOptions.price.max}€</Text>
+            <Text>Min: {filterOptions.price.min}€</Text>
+            <Text>Max: {priceValue}€</Text>
           </Flex>
           <Slider
             aria-label="slider-ex-1"
@@ -93,14 +100,36 @@ export const FilterDrawerForm = (props) => {
                 </Checkbox>
               ))}
             </Stack>
-          </CheckboxGroup>{" "}
+          </CheckboxGroup>
         </DrawerBody>
 
         <DrawerFooter>
-          <Button variant="outline" mr={3} onClick={props.onClose}>
+          <Button
+            variant="outline"
+            mr={3}
+            onClick={() => {
+              handleSubmit();
+              rest.onClose();
+              resetFilterState();
+            }}
+          >
             Clear all
           </Button>
-          <Button colorScheme="blue">View</Button>
+          <Button
+            colorScheme="blue"
+            onClick={() => {
+              handleSubmit({
+                type: typeValue,
+                price: priceValue,
+                mechanism: mechanismValue,
+                material: materialValue,
+              });
+              rest.onClose();
+              resetFilterState();
+            }}
+          >
+            View
+          </Button>
         </DrawerFooter>
       </DrawerContent>
     </Drawer>

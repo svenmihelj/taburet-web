@@ -6,7 +6,7 @@ date: 2021-06-13T13:18:54.773Z
 images:
   - images/stol-lorena.png
   - images/stol-lorena-2.png
-type: chair
+type: table
 mechanism: semi-mechanical
 width: "100"
 height: "200"
