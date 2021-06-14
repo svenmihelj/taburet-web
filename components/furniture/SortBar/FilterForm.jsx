@@ -24,7 +24,7 @@ export const FilterForm = () => {
       <Heading as="h4" size="sm" my={4}>
         Product type
       </Heading>
-      <Stack spacing={10} direction="row">
+      <Stack direction="column">
         {filterOptions.types.map((item) => (
           <Checkbox value={item} key={item}>
             {item}
@@ -55,8 +55,19 @@ export const FilterForm = () => {
       <Heading as="h4" size="sm" my={4}>
         Mechanism type
       </Heading>
-      <Stack spacing={10} direction="row">
+      <Stack direction="column">
         {filterOptions.mechanism.map((item) => (
+          <Checkbox value={item} key={item}>
+            {item}
+          </Checkbox>
+        ))}
+      </Stack>
+
+      <Heading as="h4" size="sm" my={4}>
+        Material type
+      </Heading>
+      <Stack direction="column">
+        {filterOptions.material.map((item) => (
           <Checkbox value={item} key={item}>
             {item}
           </Checkbox>

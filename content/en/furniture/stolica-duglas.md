@@ -6,4 +6,9 @@ date: 2021-03-14T13:18:54.773Z
 images:
   - images/duglas-1.png
 type: chair
+mechanism: semi-mechanical
+width: "50"
+height: "50"
+lenght: "200"
+material: leather
 ---

@@ -7,4 +7,9 @@ date: 2021-06-12T13:18:54.773Z
 images:
   - images/modi-1.png
 type: chair
+mechanism: automatic
+width: "200"
+height: "100"
+lenght: "100"
+material: fabric
 ---

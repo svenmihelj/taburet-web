@@ -22,7 +22,7 @@ export const importContent = async () => {
 
   return content.reduce((acc, item) => {
     const obj = acc[item.language] || {};
-    console.log(item.price);
+
     if (!obj.hasOwnProperty("filterOptions")) {
       obj.filterOptions = {
         price: {
@@ -31,8 +31,10 @@ export const importContent = async () => {
         },
         types: [item.attributes.type],
         mechanism: [item.attributes.mechanism],
+        material: [item.attributes.material],
       };
     }
+
     if (!obj.hasOwnProperty("home")) {
       obj.home = {};
     }
@@ -46,20 +48,30 @@ export const importContent = async () => {
       obj.furniture.push({ ...item.attributes, id: item.id });
     }
 
+    // find all filter options
     if (item.attributes.price > obj.filterOptions.price.max) {
       obj.filterOptions.price.max = item.attributes.price;
-    } else if (item.attributes.price < obj.filterOptions.price.min) {
+    }
+    if (item.attributes.price < obj.filterOptions.price.min) {
       obj.filterOptions.price.min = item.attributes.price;
-    } else if (
+    }
+    if (
       item.attributes.type &&
       !obj.filterOptions.types.includes(item.attributes.type)
     ) {
       obj.filterOptions.types.push(item.attributes.type);
-    } else if (
+    }
+    if (
       item.attributes.mechanism &&
       !obj.filterOptions.mechanism.includes(item.attributes.mechanism)
     ) {
       obj.filterOptions.mechanism.push(item.attributes.mechanism);
+    }
+    if (
+      item.attributes.material &&
+      !obj.filterOptions.material.includes(item.attributes.material)
+    ) {
+      obj.filterOptions.material.push(item.attributes.material);
     }
 
     acc[item.language] = obj;

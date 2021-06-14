@@ -7,4 +7,9 @@ images:
   - images/stol-lorena.png
   - images/stol-lorena-2.png
 type: chair
+mechanism: semi-mechanical
+width: "100"
+height: "200"
+lenght: "100"
+material: wood
 ---
