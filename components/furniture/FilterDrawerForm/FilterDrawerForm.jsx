@@ -116,7 +116,6 @@ export const FilterDrawerForm = ({ handleSubmit, ...rest }) => {
             Clear all
           </Button>
           <Button
-            colorScheme="blue"
             onClick={() => {
               handleSubmit({
                 type: typeValue,

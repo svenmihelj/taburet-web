@@ -1,6 +1,8 @@
 import React from "react";
-import { Heading } from "@chakra-ui/react";
+// import { Image } from "@chakra-ui/react";
 
+import { Carousel } from "../components/single-furniture/Carousel/Carousel";
+import { FurnitureInfo } from "../components/single-furniture/FurnitureInfo/FurnitureInfo";
 import { Navbar } from "../components/shared/Navbar/Navbar";
 import { Footer } from "../components/shared/Footer/Footer";
 import { Meta } from "../components/shared/Meta/Meta";
@@ -13,12 +15,14 @@ const FurniturePage = () => {
   if (!content) {
     return <div>nista jos...</div>;
   }
-
+  console.log(content);
   return (
     <>
       <Meta />
       <Navbar />
-      <Heading>{content.title}</Heading>
+      <Carousel images={content.images} />
+      <FurnitureInfo content={content} />
+
       <Footer />
     </>
   );
