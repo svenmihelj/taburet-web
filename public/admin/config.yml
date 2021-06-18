@@ -9,7 +9,8 @@ collections:
     files:
       - label: "Croatina"
         name: "hr"
-        file: "content/hr/home.md"
+        file: "content/hr/home.json"
+        format: "json"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "string" }
@@ -18,7 +19,8 @@ collections:
           - { label: "Background image", name: "bg_image", widget: "image" }
       - label: "English"
         name: "en"
-        file: "content/en/home.md"
+        file: "content/en/home.json"
+        format: "json"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "string" }
@@ -27,7 +29,8 @@ collections:
           - { label: "Background image", name: "bg_image", widget: "image" }
       - label: "German"
         name: "de"
-        file: "content/de/home.md"
+        file: "content/de/home.json"
+        format: "json"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "string" }
@@ -36,7 +39,8 @@ collections:
           - { label: "Background image", name: "bg_image", widget: "image" }
       - label: "Russian"
         name: "ru"
-        file: "content/ru/home.md"
+        file: "content/ru/home.json"
+        format: "json"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "string" }
@@ -49,6 +53,7 @@ collections:
     create: true
     slug: "{{slug}}"
     identifier_field: slug
+    format: "json"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
@@ -86,6 +91,7 @@ collections:
   - label: "Furniture English"
     name: "furniture_en"
     folder: "content/en/furniture"
+    format: "json"
     create: true
     slug: "{{slug}}"
     identifier_field: slug
@@ -126,6 +132,7 @@ collections:
   - label: "Furniture German"
     name: "furniture_de"
     folder: "content/de/furniture"
+    format: "json"
     create: true
     slug: "{{slug}}"
     identifier_field: slug
@@ -166,6 +173,7 @@ collections:
   - label: "Furniture Russian"
     name: "furniture_ru"
     folder: "content/ru/furniture"
+    format: "json"
     create: true
     slug: "{{slug}}"
     identifier_field: slug
