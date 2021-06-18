@@ -1,7 +1,0 @@
----
-title: Весенние предложения 2
-description: До 20%
-link_text: Показать сейчас
-link_url: ...
-bg_image: images/stol-viktorija.png
----
