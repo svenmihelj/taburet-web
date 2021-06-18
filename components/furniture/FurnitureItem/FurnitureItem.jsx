@@ -19,7 +19,7 @@ export const FurnitureItem = ({ furniture, ...rest }) => (
   >
     <Box bg="white" shadow="lg" rounded="lg" overflow="hidden" mx="auto">
       <LinkBox w="100%">
-        <LinkOverlay href={furniture.id}>
+        <LinkOverlay href={`hr/${furniture.id}`}>
           <Image
             w="full"
             h={80}
