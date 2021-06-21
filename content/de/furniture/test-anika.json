@@ -1,0 +1,15 @@
+{
+  "width": "123",
+  "height": "123",
+  "material": "wood",
+  "price": 121,
+  "date": "2021-06-21T14:47:37.630Z",
+  "title": "Test Anika",
+  "images": [
+    "images/anika-1.png"
+  ],
+  "mechanism": "mechanically",
+  "type": "chair",
+  "description": "test",
+  "lenght": "123"
+}
