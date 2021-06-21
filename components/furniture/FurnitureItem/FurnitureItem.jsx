@@ -5,9 +5,12 @@ import {
   LinkBox,
   LinkOverlay,
   Image,
+  IconButton,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { useLanguage } from "../../../context/LanguageProvider";
+
+import CartIcon from "../../../assets/icons/ic-cart.svg";
 
 export const FurnitureItem = ({ furniture, ...rest }) => {
   const { language } = useLanguage();
@@ -55,25 +58,12 @@ export const FurnitureItem = ({ furniture, ...rest }) => {
             px={6}
           >
             <chakra.span fontWeight="bold">{furniture.price} €</chakra.span>
-            <chakra.button
-              bg="gray.800"
-              fontSize="xs"
-              fontWeight="bold"
-              color="white"
-              px={2}
-              py={1}
-              rounded="lg"
-              textTransform="uppercase"
-              _hover={{
-                bg: "gray.600",
-              }}
-              _focus={{
-                bg: "gray.600",
-                outline: "none",
-              }}
-            >
-              Add to cart
-            </chakra.button>
+            <IconButton
+              size="sm"
+              icon={<Box as={CartIcon} w="16px" h="16px" />}
+              aria-label="add to cart"
+              disabled
+            />
           </Flex>
         </Box>
       </Box>

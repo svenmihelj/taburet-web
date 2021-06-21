@@ -3,7 +3,6 @@ import {
   chakra,
   Box,
   Flex,
-  Heading,
   IconButton,
   HStack,
   Button,
@@ -11,6 +10,7 @@ import {
   CloseButton,
   useDisclosure,
 } from "@chakra-ui/react";
+import NextLink from "next/link";
 
 import { LanguagePicker } from "./Navbar.elements";
 import { useLanguage } from "../../../context/LanguageProvider";
@@ -31,11 +31,13 @@ export const Navbar = () => {
 
   return (
     <React.Fragment>
-      <chakra.header w="full" px={{ base: 2, sm: 4 }} py={4} shadow="md">
+      <chakra.header w="full" px={{ base: 4, sm: 8 }} py={4} shadow="md">
         <Flex alignItems="center" justifyContent="space-between" mx="auto">
-          <Flex>
-            <chakra.h1 fontSize="xl">TABURET</chakra.h1>
-          </Flex>
+          <NextLink href={`/${language}/`}>
+            <chakra.h1 fontSize="xl" sx={{ cursor: "pointer" }}>
+              TABURET
+            </chakra.h1>
+          </NextLink>
           <HStack display="flex" alignItems="center" spacing={1}>
             <HStack
               spacing={1}
@@ -46,8 +48,10 @@ export const Navbar = () => {
               <IconButton
                 aria-label="Cart"
                 variant="ghost"
-                icon={<CartIcon />}
+                icon={<Box as={CartIcon} w="24px" h="24px" />}
+                size="xs"
                 mr={6}
+                disabled
               />
               <LanguagePicker
                 value={language}
