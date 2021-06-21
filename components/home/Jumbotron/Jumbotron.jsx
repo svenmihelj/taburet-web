@@ -92,7 +92,7 @@ export const Jumbotron = ({ content }) => {
           h={[56, 72, 96, "full"]}
           w="full"
           fit="cover"
-          src={content.bg_image}
+          src={`/${content.bg_image}`}
           alt=""
           loading="lazy"
         />

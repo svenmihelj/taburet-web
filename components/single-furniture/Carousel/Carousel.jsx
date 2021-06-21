@@ -33,7 +33,12 @@ export const Carousel = ({ images }) => {
         <Flex h="600px" w="full" {...carouselStyle}>
           {images.map((slide, i) => (
             <Box key={`slide-${i}`} boxSize="full" flex="none">
-              <Image src={slide} h="100%" mx="auto" backgroundSize="cover" />
+              <Image
+                src={`/${slide}`}
+                h="100%"
+                mx="auto"
+                backgroundSize="cover"
+              />
             </Box>
           ))}
         </Flex>

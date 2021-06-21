@@ -30,7 +30,7 @@ export const FurnitureItem = ({ furniture, ...rest }) => {
                 w="full"
                 h={80}
                 fit="cover"
-                src={furniture.images[0]}
+                src={`/${furniture.images[0]}`}
                 alt="avatar"
               />
             </LinkOverlay>
