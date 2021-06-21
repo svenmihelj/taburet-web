@@ -1,0 +1,16 @@
+{
+  "width": "123",
+  "height": "321",
+  "material": "metal",
+  "price": 749,
+  "date": "2021-06-21T14:45:12.200Z",
+  "title": "Stol Anri",
+  "images": [
+    "images/stol-anri-2.png",
+    "images/stol-anri.png"
+  ],
+  "mechanism": "mechanically",
+  "type": "table",
+  "description": "Test text is here...",
+  "lenght": "222"
+}
