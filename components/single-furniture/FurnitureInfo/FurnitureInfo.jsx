@@ -17,7 +17,6 @@ export const FurnitureInfo = ({ content }) => (
     </Box>
 
     <Stack
-      bg="gray.50"
       py={8}
       px={{ base: 8, lg: 16 }}
       direction={{ base: "column", lg: "row" }}
