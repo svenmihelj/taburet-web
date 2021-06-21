@@ -1,29 +1,31 @@
 export const reduceFilterOptions = (content) =>
-  content.reduce((acc, item) => {
-    const obj = {
-      price: {
-        min: item.price,
-        max: item.price,
-      },
-      types: [item.type],
-      mechanism: [item.mechanism],
-      material: [item.material],
-    };
-    if (item.price > obj.price.max) {
-      obj.price.max = item.price;
-    }
-    if (item.price < obj.price.min) {
-      obj.price.min = item.price;
-    }
-    if (item.type && !obj.types.includes(item.type)) {
-      obj.types.push(item.type);
-    }
-    if (item.mechanism && !obj.mechanism.includes(item.mechanism)) {
-      obj.mechanism.push(item.mechanism);
-    }
-    if (item.material && !obj.material.includes(item.material)) {
-      obj.material.push(item.material);
-    }
+  content.reduce(
+    (acc, item) => {
+      if (item.price > acc.price.max) {
+        acc.price.max = item.price;
+      }
+      if (item.price < acc.price.min) {
+        acc.price.min = item.price;
+      }
+      if (item.type && !acc.types.includes(item.type)) {
+        acc.types.push(item.type);
+      }
+      if (item.mechanism && !acc.mechanism.includes(item.mechanism)) {
+        acc.mechanism.push(item.mechanism);
+      }
+      if (item.material && !acc.material.includes(item.material)) {
+        acc.material.push(item.material);
+      }
 
-    return obj;
-  }, {});
+      return acc;
+    },
+    {
+      price: {
+        min: 9999999,
+        max: 0,
+      },
+      types: [],
+      mechanism: [],
+      material: [],
+    }
+  );
