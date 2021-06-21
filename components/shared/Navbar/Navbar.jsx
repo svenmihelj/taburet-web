@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 
 import { LanguagePicker } from "./Navbar.elements";
-import { useContent } from "../../../context/ContentProvider";
+import { useLanguage } from "../../../context/LanguageProvider";
 
 import CartIcon from "../../../assets/icons/ic-cart.svg";
 import MenuIcon from "../../../assets/icons/ic-menu.svg";
@@ -26,7 +26,7 @@ const languages = [
 ];
 
 export const Navbar = () => {
-  const { language, changeLanguage } = useContent();
+  const { language, changeLanguage } = useLanguage();
   const mobileNav = useDisclosure();
 
   return (

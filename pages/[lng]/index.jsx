@@ -9,16 +9,17 @@ import { Footer } from "../../components/shared/Footer/Footer";
 import { Meta } from "../../components/shared/Meta/Meta";
 
 import { reduceFilterOptions } from "../../helpers/filterOptions";
+import { FilterOptionsProvider } from "../../context/FilterOptionsProvider";
 
 const Home = ({ home, furniture, filterOptions }) => {
   return (
-    <>
+    <FilterOptionsProvider value={filterOptions}>
       <Meta />
       <Navbar />
       <Jumbotron content={home} />
-      {/* <FurnitureList furniture={furniture} /> */}
+      <FurnitureList furniture={furniture} />
       <Footer />
-    </>
+    </FilterOptionsProvider>
   );
 };
 
