@@ -8,7 +8,7 @@ collections:
     name: "filters"
     files:
       - label: "Croatian"
-        name: "hr"
+        name: "filter-hr"
         file: "content/hr/filters.json"
         format: "json"
         fields:

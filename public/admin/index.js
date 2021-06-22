@@ -10,4 +10,4 @@ var PostPreview = createClass({
   },
 });
 
-window.CMS.registerPreviewTemplate("filters", PostPreview);
+window.CMS.registerPreviewTemplate("filter-hr", PostPreview);
