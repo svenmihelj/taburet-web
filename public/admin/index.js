@@ -1,6 +1,4 @@
-import CMS from "netlify-cms";
-// Initialize the CMS object
-CMS.init();
+window.CMS.init();
 
 var PostPreview = createClass({
   render: function () {
@@ -12,4 +10,4 @@ var PostPreview = createClass({
   },
 });
 
-CMS.registerPreviewTemplate("filters", PostPreview);
+window.CMS.registerPreviewTemplate("filters", PostPreview);
