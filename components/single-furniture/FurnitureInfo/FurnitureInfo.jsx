@@ -36,7 +36,7 @@ export const FurnitureInfo = ({ content }) => (
         <Flex mb={4}>
           <Text w="40%">Length (cm)</Text>
           <Text w="60%" as="i">
-            {content.lenght}
+            {content.length}
           </Text>
         </Flex>
         <Flex mb={4}>
