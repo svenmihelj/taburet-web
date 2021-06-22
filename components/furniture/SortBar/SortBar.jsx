@@ -1,7 +1,13 @@
 import { useState, useRef } from "react";
-import { Flex, Button, Badge, Box, useDisclosure } from "@chakra-ui/react";
+import {
+  Flex,
+  Button,
+  Badge,
+  Box,
+  useDisclosure,
+  Select,
+} from "@chakra-ui/react";
 
-import { SortSelect } from "./SortBar.elements";
 import { FilterDrawerForm } from "../FilterDrawerForm/FilterDrawerForm";
 
 import FilterIcon from "../../../assets/icons/ic-filter.svg";
@@ -38,13 +44,18 @@ export const SortBar = ({ onSortChange, filter, handleSubmit, ...rest }) => {
           <Badge mr={4}>Mechanism: {filter.mechanism.join(", ")}</Badge>
         ) : null}
       </Box>
-      <SortSelect placeholder="Sort by" value={sort} onChange={handleSort}>
+      <Select
+        placeholder="Sort by"
+        value={sort}
+        onChange={handleSort}
+        w="200px"
+      >
         <option value="date">New</option>
         <option value="name-desc">Name: A-Z</option>
         <option value="name-asc">Name: Z-A</option>
         <option value="price-desc">Price: low to high</option>
         <option value="price-asc">Price: high to low</option>
-      </SortSelect>
+      </Select>
       <FilterDrawerForm
         isOpen={isOpen}
         placement="right"

@@ -5,7 +5,5 @@ export const LanguagePicker = chakra("select", {
     outline: "none",
     boxShadow: "none",
     fontWeight: "bold",
-
-    fontSize: { md: "2xl", sm: "md" },
   },
 });

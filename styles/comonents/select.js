@@ -1,6 +1,14 @@
 export const Select = {
-  baseStyle: {
-    border: "none",
-    bg: "transparent",
+  parts: ["field", "icon"],
+  variants: {
+    outline: {
+      field: {
+        bg: "white",
+        border: "none",
+      },
+    },
+  },
+  defaultProps: {
+    variant: "outline",
   },
 };

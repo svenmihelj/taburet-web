@@ -8,6 +8,7 @@ import {
   Button,
   VStack,
   CloseButton,
+  Select,
   useDisclosure,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
@@ -53,7 +54,8 @@ export const Navbar = () => {
                 mr={6}
                 disabled
               />
-              <LanguagePicker
+              <Select
+                fontSize="2xl"
                 value={language}
                 onChange={(e) => changeLanguage(e.target.value)}
               >
@@ -62,7 +64,7 @@ export const Navbar = () => {
                     {item.icon}
                   </option>
                 ))}
-              </LanguagePicker>
+              </Select>
             </HStack>
             <Box display={{ base: "inline-flex", md: "none" }}>
               <IconButton
@@ -97,7 +99,10 @@ export const Navbar = () => {
                 <Button w="full" variant="ghost" rightIcon={<CartIcon />}>
                   Cart
                 </Button>
-                <LanguagePicker
+                <Select
+                  fontSize="md"
+                  w="160px"
+                  fontWeight="bold"
                   value={language}
                   onChange={(e) => {
                     changeLanguage(e.target.value);
@@ -109,7 +114,7 @@ export const Navbar = () => {
                       {item.icon} {item.label}
                     </option>
                   ))}
-                </LanguagePicker>
+                </Select>
               </VStack>
             </Box>
           </HStack>
