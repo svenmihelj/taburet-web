@@ -75,6 +75,207 @@ collections:
               name: "filter_btn_clear",
               widget: "string",
             }
+      - label: "English"
+        name: "filter-en"
+        file: "content/en/filters.json"
+        format: "json"
+        fields:
+          - { label: "Sorting new", name: "sort_new", widget: "string" }
+          - {
+              label: "Sorting name asc",
+              name: "sort_name_asc",
+              widget: "string",
+            }
+          - {
+              label: "Sorting name desc",
+              name: "sort_name_desc",
+              widget: "string",
+            }
+          - {
+              label: "Sorting price asc",
+              name: "sort_price_asc",
+              widget: "string",
+            }
+          - {
+              label: "Sorting price desc",
+              name: "sort_price_desc",
+              widget: "string",
+            }
+          - { label: "Filter title", name: "filter_title", widget: "string" }
+          - {
+              label: "Filter product type title",
+              name: "filter_product_type_title",
+              widget: "string",
+            }
+          - {
+              label: "Filter price title",
+              name: "filter_price_title",
+              widget: "string",
+            }
+          - {
+              label: "Filter price min label",
+              name: "filter_price_min_label",
+              widget: "string",
+            }
+          - {
+              label: "Filter price max label",
+              name: "filter_price_max_label",
+              widget: "string",
+            }
+          - {
+              label: "Filter mechanism type title",
+              name: "filter_mechanism_type_title",
+              widget: "string",
+            }
+          - {
+              label: "Filter material type title",
+              name: "filter_material_type_title",
+              widget: "string",
+            }
+          - {
+              label: "Filter submit button text",
+              name: "filter_btn_submit",
+              widget: "string",
+            }
+          - {
+              label: "Filter clear button text",
+              name: "filter_btn_clear",
+              widget: "string",
+            }
+      - label: "German"
+        name: "filter-de"
+        file: "content/de/filters.json"
+        format: "json"
+        fields:
+          - { label: "Sorting new", name: "sort_new", widget: "string" }
+          - {
+              label: "Sorting name asc",
+              name: "sort_name_asc",
+              widget: "string",
+            }
+          - {
+              label: "Sorting name desc",
+              name: "sort_name_desc",
+              widget: "string",
+            }
+          - {
+              label: "Sorting price asc",
+              name: "sort_price_asc",
+              widget: "string",
+            }
+          - {
+              label: "Sorting price desc",
+              name: "sort_price_desc",
+              widget: "string",
+            }
+          - { label: "Filter title", name: "filter_title", widget: "string" }
+          - {
+              label: "Filter product type title",
+              name: "filter_product_type_title",
+              widget: "string",
+            }
+          - {
+              label: "Filter price title",
+              name: "filter_price_title",
+              widget: "string",
+            }
+          - {
+              label: "Filter price min label",
+              name: "filter_price_min_label",
+              widget: "string",
+            }
+          - {
+              label: "Filter price max label",
+              name: "filter_price_max_label",
+              widget: "string",
+            }
+          - {
+              label: "Filter mechanism type title",
+              name: "filter_mechanism_type_title",
+              widget: "string",
+            }
+          - {
+              label: "Filter material type title",
+              name: "filter_material_type_title",
+              widget: "string",
+            }
+          - {
+              label: "Filter submit button text",
+              name: "filter_btn_submit",
+              widget: "string",
+            }
+          - {
+              label: "Filter clear button text",
+              name: "filter_btn_clear",
+              widget: "string",
+            }
+      - label: "Russian"
+        name: "filter-ru"
+        file: "content/ru/filters.json"
+        format: "json"
+        fields:
+          - { label: "Sorting new", name: "sort_new", widget: "string" }
+          - {
+              label: "Sorting name asc",
+              name: "sort_name_asc",
+              widget: "string",
+            }
+          - {
+              label: "Sorting name desc",
+              name: "sort_name_desc",
+              widget: "string",
+            }
+          - {
+              label: "Sorting price asc",
+              name: "sort_price_asc",
+              widget: "string",
+            }
+          - {
+              label: "Sorting price desc",
+              name: "sort_price_desc",
+              widget: "string",
+            }
+          - { label: "Filter title", name: "filter_title", widget: "string" }
+          - {
+              label: "Filter product type title",
+              name: "filter_product_type_title",
+              widget: "string",
+            }
+          - {
+              label: "Filter price title",
+              name: "filter_price_title",
+              widget: "string",
+            }
+          - {
+              label: "Filter price min label",
+              name: "filter_price_min_label",
+              widget: "string",
+            }
+          - {
+              label: "Filter price max label",
+              name: "filter_price_max_label",
+              widget: "string",
+            }
+          - {
+              label: "Filter mechanism type title",
+              name: "filter_mechanism_type_title",
+              widget: "string",
+            }
+          - {
+              label: "Filter material type title",
+              name: "filter_material_type_title",
+              widget: "string",
+            }
+          - {
+              label: "Filter submit button text",
+              name: "filter_btn_submit",
+              widget: "string",
+            }
+          - {
+              label: "Filter clear button text",
+              name: "filter_btn_clear",
+              widget: "string",
+            }
 
   - label: "Home"
     name: "home"
