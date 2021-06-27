@@ -1,0 +1,16 @@
+{
+  "filter_mechanism_type_title": "Mechanism type",
+  "filter_btn_submit": "View",
+  "filter_btn_clear": "Clear",
+  "sort_name_desc": "Name Z-A",
+  "filter_material_type_title": "Material type",
+  "sort_price_desc": "Price Z-A",
+  "filter_price_min_label": "Min",
+  "filter_product_type_title": "Product type",
+  "filter_title": "Filters",
+  "sort_price_asc": "Price A-Z",
+  "filter_price_title": "Price",
+  "filter_price_max_label": "Max",
+  "sort_name_asc": "Name A-Z",
+  "sort_new": "New"
+}
