@@ -2,8 +2,6 @@ window.CMS.init();
 
 var FilterPreview = createClass({
   render: function () {
-    const { entry } = this.props;
-
     return h(
       "div",
       {},
