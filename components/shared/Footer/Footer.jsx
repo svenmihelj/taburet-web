@@ -13,13 +13,9 @@ import {
 import NextLink from "next/link";
 
 import { useLanguage } from "../../../context/LanguageProvider";
-import { useTranslations } from "../../../context/TranslationProvider";
 
-export const Footer = () => {
+export const Footer = ({ content }) => {
   const { language } = useLanguage();
-  const {
-    translations: { footer },
-  } = useTranslations();
 
   return (
     <Flex
@@ -38,24 +34,30 @@ export const Footer = () => {
           }
         />
 
-        <NextLink href="/about" passHref>
+        <NextLink
+          href={{ pathname: "/[lng]/about", query: { lng: language } }}
+          passHref
+        >
           <Link
             fontSize="xl"
             my={4}
             ml={{ base: 8, lg: 24 }}
             sx={{ display: "block" }}
           >
-            {footer.about_text}
+            {content.about_text}
           </Link>
         </NextLink>
-        <NextLink href="/delivery-info" passHref>
+        <NextLink
+          href={{ pathname: "/[lng]/delivery-info", query: { lng: language } }}
+          passHref
+        >
           <Link
             fontSize="xl"
             mb={4}
             ml={{ base: 8, lg: 24 }}
             sx={{ display: "block" }}
           >
-            {footer.delivery_text}
+            {content.delivery_text}
           </Link>
         </NextLink>
       </Box>
@@ -67,21 +69,21 @@ export const Footer = () => {
         w={{ base: "100%", lg: "50%" }}
       >
         <Heading as="h2" mb={8}>
-          {footer.contact_title}
+          {content.contact_title}
         </Heading>
         <FormControl id="name" mb={4}>
-          <FormLabel>{footer.name_label}</FormLabel>
+          <FormLabel>{content.name_label}</FormLabel>
           <Input type="text" name="name" />
         </FormControl>
         <FormControl id="email" mb={4}>
-          <FormLabel>{footer.email_label}</FormLabel>
+          <FormLabel>{content.email_label}</FormLabel>
           <Input type="email" name="email" />
         </FormControl>
         <FormControl id="message" mb={4}>
-          <FormLabel>{footer.message_label}</FormLabel>
+          <FormLabel>{content.message_label}</FormLabel>
           <Textarea name="message" />
         </FormControl>
-        <Button type="submit">{footer.submit_label}</Button>
+        <Button type="submit">{content.submit_label}</Button>
       </Box>
     </Flex>
   );

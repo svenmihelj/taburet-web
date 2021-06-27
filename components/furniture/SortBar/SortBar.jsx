@@ -11,15 +11,13 @@ import {
 import { FilterDrawerForm } from "../FilterDrawerForm/FilterDrawerForm";
 
 import FilterIcon from "../../../assets/icons/ic-filter.svg";
-import { useTranslations } from "../../../context/TranslationProvider";
+import { useFilters } from "../../../context/FilterProvider";
 
 export const SortBar = ({ onSortChange, filter, handleSubmit, ...rest }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const {
-    translations: {
-      filter: { content },
-    },
-  } = useTranslations();
+    filter: { content },
+  } = useFilters();
   const [sort, setSort] = useState("default");
   const btnRef = useRef();
 

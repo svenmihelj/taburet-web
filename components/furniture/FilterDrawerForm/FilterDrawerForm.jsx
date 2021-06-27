@@ -20,14 +20,12 @@ import {
   DrawerCloseButton,
 } from "@chakra-ui/react";
 
-import { useTranslations } from "../../../context/TranslationProvider";
+import { useFilters } from "../../../context/FilterProvider";
 
 export const FilterDrawerForm = ({ handleSubmit, ...rest }) => {
   const {
-    translations: {
-      filter: { filterOptions, content },
-    },
-  } = useTranslations();
+    filter: { filterOptions, content },
+  } = useFilters();
   const [typeValue, setTypeValue] = useState([]);
   const [priceValue, setPriceValue] = useState(0);
   const [mechanismValue, setMechanismValue] = useState([]);

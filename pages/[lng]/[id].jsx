@@ -8,8 +8,8 @@ import { Navbar } from "../../components/shared/Navbar/Navbar";
 import { Footer } from "../../components/shared/Footer/Footer";
 import { Meta } from "../../components/shared/Meta/Meta";
 
-const FurniturePage = (props) => {
-  if (!props?.title) {
+const FurniturePage = ({ content, footer }) => {
+  if (!content?.title) {
     return <div>nista jos...</div>;
   }
 
@@ -17,9 +17,9 @@ const FurniturePage = (props) => {
     <>
       <Meta />
       <Navbar />
-      <Carousel images={props.images} />
-      <FurnitureInfo content={props} />
-      <Footer />
+      <Carousel images={content.images} />
+      <FurnitureInfo content={content} />
+      <Footer content={footer} />
     </>
   );
 };
@@ -57,16 +57,23 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const { lng, id } = params;
 
-  const postsDirectory = path.join(
-    process.cwd(),
-    `content/${lng}/furniture/${id}.json`
-  );
+  const postsDirectory = path.join(process.cwd(), `content/${lng}`);
 
   try {
-    const content = await fs.readFile(postsDirectory, "utf8");
+    const content = await fs.readFile(
+      `${postsDirectory}/furniture/${id}.json`,
+      "utf8"
+    );
     const jsonContent = JSON.parse(content);
+
+    const footerContent = await fs.readFile(
+      `${postsDirectory}/footer.json`,
+      "utf8"
+    );
+    const jsonFooterContent = JSON.parse(footerContent);
+
     return {
-      props: jsonContent,
+      props: { content: jsonContent, footer: jsonFooterContent },
     };
   } catch (e) {
     return null;

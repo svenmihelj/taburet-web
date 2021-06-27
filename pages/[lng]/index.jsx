@@ -9,17 +9,17 @@ import { Footer } from "../../components/shared/Footer/Footer";
 import { Meta } from "../../components/shared/Meta/Meta";
 
 import { reduceFilterOptions } from "../../helpers/filterOptions";
-import { TranslationProvider } from "../../context/TranslationProvider";
+import { FilterProvider } from "../../context/FilterProvider";
 
 const Home = ({ home, furniture, filter, footer }) => {
   return (
-    <TranslationProvider value={{ filter, footer }}>
+    <FilterProvider value={filter}>
       <Meta />
       <Navbar />
       <Jumbotron content={home} />
       <FurnitureList furniture={furniture} />
-      <Footer />
-    </TranslationProvider>
+      <Footer content={footer} />
+    </FilterProvider>
   );
 };
 
