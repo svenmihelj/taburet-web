@@ -1,0 +1,16 @@
+{
+  "filter_mechanism_type_title": "Тип механизма",
+  "filter_btn_submit": "Вид",
+  "filter_btn_clear": "ясно",
+  "sort_name_desc": "Имя Z-A",
+  "filter_material_type_title": "Тип материала",
+  "sort_price_desc": "Цена Я-А",
+  "filter_price_min_label": "Мин",
+  "filter_product_type_title": "Тип продукта",
+  "filter_title": "Фильтры",
+  "sort_price_asc": "Цена от А до Я",
+  "filter_price_title": "Цена",
+  "filter_price_max_label": "Максимум",
+  "sort_name_asc": "Имя от А до Я",
+  "sort_new": "Новый"
+}
