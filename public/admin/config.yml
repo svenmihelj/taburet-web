@@ -421,6 +421,16 @@ collections:
               widget: "string",
             }
 
+  - label: "About"
+    name: "about"
+    files:
+      - label: "Croatian"
+        name: "about-hr"
+        file: "content/hr/about.json"
+        format: "json"
+        fields:
+          - { label: "Content", name: "content", widget: "markdown" }
+
   - label: "Furniture Croatian"
     name: "furniture_hr"
     folder: "content/hr/furniture"
@@ -561,13 +571,9 @@ collections:
           widget: "datetime",
           required: true,
         }
-      - {
-          label: "Images",
-          name: "images",
-          widget: "list",
-          summary: "{{fields.image}}",
-          field: { label: Image, name: image, widget: image },
-        }
+      - { label: "Images", name: "images", ? info
+            widget
+          : "list", summary: "{{fields.image}}", field: { label: Image, name: image, widget: image } }
       - {
           label: "Type",
           name: "type",
