@@ -9,17 +9,17 @@ import { Footer } from "../../components/shared/Footer/Footer";
 import { Meta } from "../../components/shared/Meta/Meta";
 
 import { reduceFilterOptions } from "../../helpers/filterOptions";
-import { FilterOptionsProvider } from "../../context/FilterOptionsProvider";
+import { TranslationProvider } from "../../context/TranslationProvider";
 
-const Home = ({ home, furniture, filterOptions }) => {
+const Home = ({ home, furniture, filter, footer }) => {
   return (
-    <FilterOptionsProvider value={filterOptions}>
+    <TranslationProvider value={{ filter, footer }}>
       <Meta />
       <Navbar />
       <Jumbotron content={home} />
       <FurnitureList furniture={furniture} />
       <Footer />
-    </FilterOptionsProvider>
+    </TranslationProvider>
   );
 };
 
@@ -39,7 +39,7 @@ export async function getStaticProps({ params }) {
   const { lng } = params;
 
   const postsDirectory = path.join(process.cwd(), `content/${lng}`);
-  const namesHr = await fs.readdir(`${postsDirectory}/furniture`);
+  const furnitureNames = await fs.readdir(`${postsDirectory}/furniture`);
 
   try {
     const homeContent = await fs.readFile(
@@ -48,8 +48,20 @@ export async function getStaticProps({ params }) {
     );
     const jsonHomeContent = JSON.parse(homeContent);
 
+    const filterContent = await fs.readFile(
+      `${postsDirectory}/filters.json`,
+      "utf8"
+    );
+    const jsonFilterContent = JSON.parse(filterContent);
+
+    const footerContent = await fs.readFile(
+      `${postsDirectory}/footer.json`,
+      "utf8"
+    );
+    const jsonFooterContent = JSON.parse(footerContent);
+
     const content = await Promise.all(
-      namesHr.map(async (path) => {
+      furnitureNames.map(async (path) => {
         const items = await fs.readFile(
           `${postsDirectory}/furniture/${path}`,
           "utf8"
@@ -65,7 +77,12 @@ export async function getStaticProps({ params }) {
     const filterOptions = reduceFilterOptions(content);
 
     return {
-      props: { home: jsonHomeContent, furniture: content, filterOptions },
+      props: {
+        home: jsonHomeContent,
+        footer: jsonFooterContent,
+        furniture: content,
+        filter: { filterOptions, content: jsonFilterContent },
+      },
     };
   } catch (e) {
     return null;

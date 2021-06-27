@@ -20,10 +20,14 @@ import {
   DrawerCloseButton,
 } from "@chakra-ui/react";
 
-import { useFilterOptions } from "../../../context/FilterOptionsProvider";
+import { useTranslations } from "../../../context/TranslationProvider";
 
 export const FilterDrawerForm = ({ handleSubmit, ...rest }) => {
-  const { filterOptions } = useFilterOptions();
+  const {
+    translations: {
+      filter: { filterOptions, content },
+    },
+  } = useTranslations();
   const [typeValue, setTypeValue] = useState([]);
   const [priceValue, setPriceValue] = useState(0);
   const [mechanismValue, setMechanismValue] = useState([]);
@@ -41,11 +45,13 @@ export const FilterDrawerForm = ({ handleSubmit, ...rest }) => {
       <DrawerOverlay />
       <DrawerContent>
         <DrawerCloseButton />
-        <DrawerHeader borderBottomWidth="1px">Filter</DrawerHeader>
+        <DrawerHeader borderBottomWidth="1px">
+          {content.filter_title}
+        </DrawerHeader>
 
         <DrawerBody>
           <Heading as="h4" size="sm" my={4}>
-            Product type
+            {content.filter_product_type_title}
           </Heading>
           <CheckboxGroup value={typeValue} onChange={setTypeValue}>
             <Stack direction="column">
@@ -57,11 +63,15 @@ export const FilterDrawerForm = ({ handleSubmit, ...rest }) => {
             </Stack>
           </CheckboxGroup>
           <Heading as="h4" size="sm" my={4}>
-            Price
+            {content.filter_price_title}
           </Heading>
           <Flex justify="space-between">
-            <Text>Min: {filterOptions.price.min}€</Text>
-            <Text>Max: {priceValue}€</Text>
+            <Text>
+              {content.filter_price_min_label}: {filterOptions.price.min}€
+            </Text>
+            <Text>
+              {content.filter_price_max_label}: {priceValue}€
+            </Text>
           </Flex>
           <Slider
             aria-label="slider-ex-1"
@@ -76,7 +86,7 @@ export const FilterDrawerForm = ({ handleSubmit, ...rest }) => {
             <SliderThumb />
           </Slider>
           <Heading as="h4" size="sm" my={4}>
-            Mechanism type
+            {content.filter_mechanism_type_title}
           </Heading>
           <CheckboxGroup value={mechanismValue} onChange={setMechanismValue}>
             <Stack direction="column">
@@ -88,7 +98,7 @@ export const FilterDrawerForm = ({ handleSubmit, ...rest }) => {
             </Stack>
           </CheckboxGroup>
           <Heading as="h4" size="sm" my={4}>
-            Material type
+            {content.filter_material_type_title}
           </Heading>
           <CheckboxGroup value={materialValue} onChange={setMaterialValue}>
             <Stack direction="column">
@@ -111,7 +121,7 @@ export const FilterDrawerForm = ({ handleSubmit, ...rest }) => {
               resetFilterState();
             }}
           >
-            Clear all
+            {content.filter_btn_clear}
           </Button>
           <Button
             onClick={() => {
@@ -125,7 +135,7 @@ export const FilterDrawerForm = ({ handleSubmit, ...rest }) => {
               resetFilterState();
             }}
           >
-            View
+            {content.filter_btn_submit}
           </Button>
         </DrawerFooter>
       </DrawerContent>

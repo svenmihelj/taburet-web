@@ -320,6 +320,107 @@ collections:
           - { label: "Link text", name: "link_text", widget: "string" }
           - { label: "Link url", name: "link_url", widget: "string" }
           - { label: "Background image", name: "bg_image", widget: "image" }
+
+  - label: "Footer"
+    name: "footer"
+    files:
+      - label: "Croatian"
+        name: "footer-hr"
+        file: "content/hr/footer.json"
+        format: "json"
+        fields:
+          - { label: "About link", name: "about_text", widget: "string" }
+          - { label: "Delivery link", name: "delivery_text", widget: "string" }
+          - {
+              label: "Contact us title",
+              name: "contact_title",
+              widget: "string",
+            }
+          - { label: "Your name label", name: "name_label", widget: "string" }
+          - { label: "Your email label", name: "email_label", widget: "string" }
+          - {
+              label: "Your message label",
+              name: "message_label",
+              widget: "string",
+            }
+          - {
+              label: "Submit button text",
+              name: "submit_label",
+              widget: "string",
+            }
+      - label: "English"
+        name: "footer-en"
+        file: "content/en/footer.json"
+        format: "json"
+        fields:
+          - { label: "About link", name: "about_text", widget: "string" }
+          - { label: "Delivery link", name: "delivery_text", widget: "string" }
+          - {
+              label: "Contact us title",
+              name: "contact_title",
+              widget: "string",
+            }
+          - { label: "Your name label", name: "name_label", widget: "string" }
+          - { label: "Your email label", name: "email_label", widget: "string" }
+          - {
+              label: "Your message label",
+              name: "message_label",
+              widget: "string",
+            }
+          - {
+              label: "Submit button text",
+              name: "submit_label",
+              widget: "string",
+            }
+      - label: "German"
+        name: "footer-de"
+        file: "content/de/footer.json"
+        format: "json"
+        fields:
+          - { label: "About link", name: "about_text", widget: "string" }
+          - { label: "Delivery link", name: "delivery_text", widget: "string" }
+          - {
+              label: "Contact us title",
+              name: "contact_title",
+              widget: "string",
+            }
+          - { label: "Your name label", name: "name_label", widget: "string" }
+          - { label: "Your email label", name: "email_label", widget: "string" }
+          - {
+              label: "Your message label",
+              name: "message_label",
+              widget: "string",
+            }
+          - {
+              label: "Submit button text",
+              name: "submit_label",
+              widget: "string",
+            }
+      - label: "Russian"
+        name: "footer-ru"
+        file: "content/ru/footer.json"
+        format: "json"
+        fields:
+          - { label: "About link", name: "about_text", widget: "string" }
+          - { label: "Delivery link", name: "delivery_text", widget: "string" }
+          - {
+              label: "Contact us title",
+              name: "contact_title",
+              widget: "string",
+            }
+          - { label: "Your name label", name: "name_label", widget: "string" }
+          - { label: "Your email label", name: "email_label", widget: "string" }
+          - {
+              label: "Your message label",
+              name: "message_label",
+              widget: "string",
+            }
+          - {
+              label: "Submit button text",
+              name: "submit_label",
+              widget: "string",
+            }
+
   - label: "Furniture Croatian"
     name: "furniture_hr"
     folder: "content/hr/furniture"

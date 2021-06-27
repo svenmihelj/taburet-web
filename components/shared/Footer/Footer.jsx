@@ -13,9 +13,13 @@ import {
 import NextLink from "next/link";
 
 import { useLanguage } from "../../../context/LanguageProvider";
+import { useTranslations } from "../../../context/TranslationProvider";
 
 export const Footer = () => {
   const { language } = useLanguage();
+  const {
+    translations: { footer },
+  } = useTranslations();
 
   return (
     <Flex
@@ -41,7 +45,7 @@ export const Footer = () => {
             ml={{ base: 8, lg: 24 }}
             sx={{ display: "block" }}
           >
-            About
+            {footer.about_text}
           </Link>
         </NextLink>
         <NextLink href="/delivery-info" passHref>
@@ -51,7 +55,7 @@ export const Footer = () => {
             ml={{ base: 8, lg: 24 }}
             sx={{ display: "block" }}
           >
-            Delivery
+            {footer.delivery_text}
           </Link>
         </NextLink>
       </Box>
@@ -63,21 +67,21 @@ export const Footer = () => {
         w={{ base: "100%", lg: "50%" }}
       >
         <Heading as="h2" mb={8}>
-          Contact us
+          {footer.contact_title}
         </Heading>
         <FormControl id="name" mb={4}>
-          <FormLabel>Your Name</FormLabel>
+          <FormLabel>{footer.name_label}</FormLabel>
           <Input type="text" name="name" />
         </FormControl>
         <FormControl id="email" mb={4}>
-          <FormLabel>Email address</FormLabel>
+          <FormLabel>{footer.email_label}</FormLabel>
           <Input type="email" name="email" />
         </FormControl>
         <FormControl id="message" mb={4}>
-          <FormLabel>Message</FormLabel>
+          <FormLabel>{footer.message_label}</FormLabel>
           <Textarea name="message" />
         </FormControl>
-        <Button type="submit">Send</Button>
+        <Button type="submit">{footer.submit_label}</Button>
       </Box>
     </Flex>
   );

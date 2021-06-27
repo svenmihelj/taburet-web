@@ -44,3 +44,28 @@
   margin: 16px 0 0 auto;
   float: right;
 }
+
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.footer > div {
+  width: 50%;
+}
+
+.footer .link {
+  display: block;
+  margin-bottom: 16px;
+}
+
+.footer .form label {
+  display: block;
+  margin-top: 16px;
+}
+
+.footer .form button {
+  display: block;
+  margin-top: 16px;
+}

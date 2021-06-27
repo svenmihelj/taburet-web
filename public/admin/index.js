@@ -93,7 +93,62 @@ var FilterPreview = createClass({
   },
 });
 
+var FooterPreview = createClass({
+  render: function () {
+    return h(
+      "div",
+      { className: "footer" },
+      h(
+        "div",
+        {},
+        h("h1", {}, "TABURET"),
+        h(
+          "a",
+          { className: "link" },
+          this.props.entry.getIn(["data", "about_text"])
+        ),
+        h(
+          "a",
+          { className: "link" },
+          this.props.entry.getIn(["data", "delivery_text"])
+        )
+      ),
+      h(
+        "div",
+        { className: "form" },
+        h("h1", {}, this.props.entry.getIn(["data", "contact_title"])),
+        h(
+          "label",
+          { for: "name" },
+          this.props.entry.getIn(["data", "name_label"])
+        ),
+        h("input", { id: "name" }),
+        h(
+          "label",
+          { for: "email" },
+          this.props.entry.getIn(["data", "email_label"])
+        ),
+        h("input", { id: "email" }),
+        h(
+          "label",
+          { for: "msg" },
+          this.props.entry.getIn(["data", "message_label"])
+        ),
+        h("textarea", { id: "msg" }),
+        h("button", {}, this.props.entry.getIn(["data", "submit_label"]))
+      )
+    );
+  },
+});
+
+// register filter preview
 window.CMS.registerPreviewTemplate("filter-hr", FilterPreview);
 window.CMS.registerPreviewTemplate("filter-en", FilterPreview);
 window.CMS.registerPreviewTemplate("filter-de", FilterPreview);
 window.CMS.registerPreviewTemplate("filter-ru", FilterPreview);
+
+// register footer preview
+window.CMS.registerPreviewTemplate("footer-hr", FooterPreview);
+window.CMS.registerPreviewTemplate("footer-en", FooterPreview);
+window.CMS.registerPreviewTemplate("footer-de", FooterPreview);
+window.CMS.registerPreviewTemplate("footer-ru", FooterPreview);
