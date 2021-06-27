@@ -1,9 +1,9 @@
 {
-  "about_text": "About",
-  "delivery_text": "Delivery",
-  "contact_title": "Contact us",
-  "name_label": "Enter name:",
-  "email_label": "Enter email:",
-  "message_label": "Enter message:",
-  "submit_label": "Send"
+  "about_text": "O nama",
+  "delivery_text": "Dostava",
+  "contact_title": "Kontaktirajte nas",
+  "name_label": "Vase ime:",
+  "email_label": "Vasa e-mail adresa:",
+  "message_label": "Vasa poruka:",
+  "submit_label": "Posalji"
 }
