@@ -10,10 +10,10 @@ import {
   CloseButton,
   Select,
   useDisclosure,
+  Image,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 
-import { LanguagePicker } from "./Navbar.elements";
 import { useLanguage } from "../../../context/LanguageProvider";
 
 import CartIcon from "../../../assets/icons/ic-cart.svg";
@@ -32,12 +32,17 @@ export const Navbar = () => {
 
   return (
     <React.Fragment>
-      <chakra.header w="full" px={{ base: 4, sm: 8 }} py={4} shadow="md">
+      <chakra.header w="full" px={{ base: 2, sm: 4 }} py={4} shadow="md">
         <Flex alignItems="center" justifyContent="space-between" mx="auto">
           <NextLink href={`/${language}/`}>
-            <chakra.h1 fontSize="xl" sx={{ cursor: "pointer" }}>
-              TABURET
-            </chakra.h1>
+            <Image
+              h={{ base: "48px", lg: "72px" }}
+              src={
+                language === "hr"
+                  ? "/images/logo-hr.png"
+                  : "/images/logo-int.png"
+              }
+            />
           </NextLink>
           <HStack display="flex" alignItems="center" spacing={1}>
             <HStack

@@ -50,7 +50,12 @@ export const FurnitureList = ({ furniture }) => {
         filter={filter}
         px={8}
       />
-      <Flex as="section" wrap="wrap" justify="flex-start" px={4}>
+      <Flex
+        as="section"
+        wrap="wrap"
+        justify="flex-start"
+        px={{ base: 0, lg: 4 }}
+      >
         {furnitureList.map((item) => (
           <FurnitureItem key={item.id} furniture={item} />
         ))}

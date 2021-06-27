@@ -96,3 +96,6 @@ var FilterPreview = createClass({
 });
 
 window.CMS.registerPreviewTemplate("filter-hr", FilterPreview);
+window.CMS.registerPreviewTemplate("filter-en", FilterPreview);
+window.CMS.registerPreviewTemplate("filter-de", FilterPreview);
+window.CMS.registerPreviewTemplate("filter-ru", FilterPreview);
